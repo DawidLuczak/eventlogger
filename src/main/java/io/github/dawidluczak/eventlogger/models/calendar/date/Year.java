@@ -1,6 +1,6 @@
-package io.github.dawidluczak.eventlogger.calendar.date;
+package io.github.dawidluczak.eventlogger.models.calendar.date;
 
-import io.github.dawidluczak.eventlogger.calendar.CalendarInterface;
+import io.github.dawidluczak.eventlogger.models.calendar.CalendarInterface;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

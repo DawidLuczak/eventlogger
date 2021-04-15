@@ -1,4 +1,4 @@
-package io.github.dawidluczak.eventlogger.calendar;
+package io.github.dawidluczak.eventlogger.models.calendar;
 
 public interface CalendarInterface {
     String[][] daysNames = {{"Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota", "Niedziela"},

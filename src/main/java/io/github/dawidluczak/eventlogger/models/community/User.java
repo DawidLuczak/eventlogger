@@ -1,4 +1,4 @@
-package io.github.dawidluczak.eventlogger.community;
+package io.github.dawidluczak.eventlogger.models.community;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -16,8 +16,9 @@ import javax.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name, description;
+    private long id;
+    private String name;
+    private String description;
 
     User(String name){
         this.name = name;

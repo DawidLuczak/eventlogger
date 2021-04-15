@@ -1,4 +1,4 @@
-package io.github.dawidluczak.eventlogger.calendar.date;
+package io.github.dawidluczak.eventlogger.models.calendar.date;
 
 
 import lombok.AllArgsConstructor;

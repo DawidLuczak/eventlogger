@@ -1,10 +1,8 @@
-package io.github.dawidluczak.eventlogger.community;
+package io.github.dawidluczak.eventlogger.models.community;
 
+import io.github.dawidluczak.eventlogger.models.community.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class UserTest {
     static User user;

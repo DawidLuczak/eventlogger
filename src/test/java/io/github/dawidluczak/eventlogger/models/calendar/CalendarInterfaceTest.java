@@ -1,11 +1,7 @@
-package io.github.dawidluczak.eventlogger.calendar;
+package io.github.dawidluczak.eventlogger.models.calendar;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import java.lang.reflect.Executable;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class CalendarInterfaceTest {
 
