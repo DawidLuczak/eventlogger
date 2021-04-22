@@ -10,11 +10,30 @@ import javax.persistence.Embeddable;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Embeddable
-public class Date {
+public class Date implements Comparable<Date> {
 	@Column
 	private int year, month, day;
 	
+	@Override
+	public int compareTo(Date o) {
+		if (this.year < o.year){
+			return -1;
+		} else if (this.year > o.year){
+			return 1;
+		} else {
+			if (this.month < o.month){
+				return -1;
+			} else if (this.month > o.month) {
+				return 1;
+			} else {
+				return Integer.compare(this.day, o.day);
+			}
+		}
+	}
 	
+	@Override
+	public String toString() {
+		return year + "-" + month + "-" + day;
+	}
 }
