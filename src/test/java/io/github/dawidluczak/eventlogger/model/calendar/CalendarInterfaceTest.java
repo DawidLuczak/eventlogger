@@ -8,21 +8,21 @@ class CalendarInterfaceTest {
     @Test
     void implementationTest(){
         Assertions.assertEquals(3, CalendarInterface.countDayInWeakNumber(2015, 11, 31));
-        Assertions.assertEquals(4, CalendarInterface.countDayInWeakNumber(2016, 1, 1));
+        Assertions.assertEquals(4, CalendarInterface.countDayInWeakNumber(2016, 0, 1));
         Assertions.assertEquals(5, CalendarInterface.countDayInWeakNumber(2016, 11, 31));
-        Assertions.assertEquals(6, CalendarInterface.countDayInWeakNumber(2017, 1, 1));
+        Assertions.assertEquals(6, CalendarInterface.countDayInWeakNumber(2017, 0, 1));
 
         Assertions.assertEquals(1, CalendarInterface.countDayInWeakNumber(2019, 11, 31));
-        Assertions.assertEquals(2, CalendarInterface.countDayInWeakNumber(2020, 1, 1));
+        Assertions.assertEquals(2, CalendarInterface.countDayInWeakNumber(2020, 0, 1));
         Assertions.assertEquals(3, CalendarInterface.countDayInWeakNumber(2020, 11, 31));
-        Assertions.assertEquals(4, CalendarInterface.countDayInWeakNumber(2021, 1, 1));
+        Assertions.assertEquals(4, CalendarInterface.countDayInWeakNumber(2021, 0, 1));
 
         Assertions.assertEquals(6, CalendarInterface.countDayInWeakNumber(2023, 11, 31));
-        Assertions.assertEquals(0, CalendarInterface.countDayInWeakNumber(2024, 1, 1));
+        Assertions.assertEquals(0, CalendarInterface.countDayInWeakNumber(2024, 0, 1));
         Assertions.assertEquals(1, CalendarInterface.countDayInWeakNumber(2024, 11, 31));
-        Assertions.assertEquals(2, CalendarInterface.countDayInWeakNumber(2025, 1, 1));
+        Assertions.assertEquals(2, CalendarInterface.countDayInWeakNumber(2025, 0, 1));
 
-        Assertions.assertEquals(4, CalendarInterface.countDayInWeakNumber(0,1,1));
+        Assertions.assertEquals(4, CalendarInterface.countDayInWeakNumber(0,0,1));
         Assertions.assertEquals(3, CalendarInterface.countDayInWeakNumber(-1, 11, 31));
     }
 
