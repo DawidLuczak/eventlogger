@@ -9,8 +9,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import java.lang.reflect.Field;
-import java.util.Arrays;
 import java.util.Set;
 
 @Setter
@@ -40,6 +38,13 @@ public class User {
         this.name = name;
     }
     
+    public User(String name, String description, String phoneNumber, String email) {
+        this.name = name;
+        this.description = description;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
+    
     public void updateFrom(User source) {
         this.name = source.name;
         this.description = source.description;
@@ -60,7 +65,7 @@ public class User {
     
     public void setFieldsWithNotNull(User source) throws IllegalAccessException {
         for (int i = 0; i < getClass().getDeclaredFields().length; i++){
-            if (source.getClass().getDeclaredFields()[i].get(source) != null){
+            if (getClass().getDeclaredFields()[i].get(source) != null){
                 getClass().getDeclaredFields()[i].set(this, getClass().getDeclaredFields()[i].get(source));
             }
         }
