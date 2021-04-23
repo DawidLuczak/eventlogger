@@ -12,21 +12,23 @@ public interface EventRepository {
 	
 	Page<Event> findAll(Pageable page);
 	
-	List<Event> findByDateYearEqualsOrderByDateMonthAscDateDayAsc(int year);
+	List<Event> findByStartDateYearEqualsOrderByStartDateMonthAscStartDateDayAsc(int year);
 	
-	List<Event> findByDateYearAndDateMonthEqualsOrderByDateDayAsc(int year, int month);
+	List<Event> findByStartDateYearAndStartDateMonthEqualsOrderByStartDateDayAsc(int year, int month);
 	
-	List<Event> findByDateYearAndDateMonthAndDateDayEquals(int year, int month, int day);
+	List<Event> findByStartDateYearAndStartDateMonthAndStartDateDayEquals(int year, int month, int day);
 	
-	List<Event> findAllByDateYearIsBetweenOrderByDateYearAscDateMonthAscDateDayAsc(int year, int year2);
+	List<Event> findAllByStartDateYearIsBetweenOrderByStartDateYearAscStartDateMonthAscStartDateDayAsc(int year, int year2);
 	
-	List<Event> findAllByDateIsBetweenOrderByDate(Date date, Date date2);
+	List<Event> findAllByStartDateIsBetweenOrderByStartDate(Date date, Date date2);
 	
 	Optional<Event> findById(int id);
 	
 	boolean existsById(int id);
 	
-	boolean existsByDoneIsFalseAndUser_Id(int id);
+	boolean existsByEventGroupId(int eventGroupId);
+	
+	boolean existsByDoneIsFalseAndEventGroupId(int id);
 	
 	Event save(Event entity);
 
