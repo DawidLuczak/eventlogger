@@ -19,17 +19,17 @@ public class UserGroupController {
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/user_groups")
-	ResponseEntity<List<UserGroup>> readAllEventGroups(){
+	ResponseEntity<List<UserGroup>> readAllUserGroups(){
 		return ResponseEntity.ok(userGroupRepository.findAll());
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/user_groups/{id}")
-	ResponseEntity<Optional<UserGroup>> readEventGroupById(@PathVariable int id){
+	ResponseEntity<Optional<UserGroup>> readUserGroupById(@PathVariable int id){
 		return ResponseEntity.ok(userGroupRepository.findById(id));
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/user_groups")
-	ResponseEntity<UserGroup> createEventGroup(@RequestBody @Valid UserGroup newUserGroup){
+	ResponseEntity<UserGroup> createUserGroup(@RequestBody @Valid UserGroup newUserGroup){
 		UserGroup currentEventGroup = userGroupRepository.save(newUserGroup);
 		return ResponseEntity.created(URI.create("/" + currentEventGroup)).body(currentEventGroup);
 	}
