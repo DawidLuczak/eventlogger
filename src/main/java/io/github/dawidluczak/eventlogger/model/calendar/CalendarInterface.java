@@ -1,5 +1,6 @@
 package io.github.dawidluczak.eventlogger.model.calendar;
 
+
 public interface CalendarInterface {
     String[][] daysNames = {{"Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota", "Niedziela"},
             {"Pn", "Wt", "Śr", "Cz", "Pt", "Sb", "Nd"}};
@@ -27,20 +28,22 @@ public interface CalendarInterface {
         int firstDay = 2;
         
         if (month > 11){
-            year += ((int)(month / 12));
+            year += month / 12;
             month = month % 12;
         } else if (month < 0) {
-            year -= (1 + ((int)((month) / 12)));
+            year -= (1 + ((month) / 12));
             month = 12 + ((month) % 12);
         }
-        firstDay += changeMonthOnDays(year, month);
+        
+        for (int i = 0; i < month; i++)
+            firstDay += CalendarInterface.getMonthSize(year, i);
     
         int dif = Math.abs(2020 - year);
     
         if (year < 2020) {
-            firstDay -= ((((int) (dif / 4)) * 5) + (dif % 4));
+            firstDay -= (((dif / 4) * 5) + (dif % 4));
         } else if (year > 2020){
-            firstDay += ((((int)(dif / 4)) * 5) + (dif % 4)) + 1;
+            firstDay += (((dif / 4) * 5) + (dif % 4)) + 1;
             if (dif % 4 == 0)
                 firstDay--;
         }
@@ -50,16 +53,6 @@ public interface CalendarInterface {
         else
             return (firstDay + (day-1)) % 7;
     }
-
-    static int changeMonthOnDays(int year, int month){
-        int days = 0;
-        if (month > 0)
-            for (int i = 0; i < month; i++)
-                days += CalendarInterface.getMonthSize(year, i);
-        else if (month < 0)
-            for (int i = 12 + month; i < 12; i++)
-                days += CalendarInterface.getMonthSize(year, i);
-        return days;
-    }
+    
 
 }
