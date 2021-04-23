@@ -12,7 +12,8 @@ import javax.persistence.Embeddable;
 @AllArgsConstructor
 @Embeddable
 public class Date implements Comparable<Date> {
-	@Column
+
+	@Column(insertable = false, updatable = false)
 	private int year, month, day;
 	
 	@Override
