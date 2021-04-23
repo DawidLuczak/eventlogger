@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 
-interface EventGroupSqlRepository extends EventGroupRepository, JpaRepository<EventGroup, Integer> {
+interface EventGroupSQLRepository extends EventGroupRepository, JpaRepository<EventGroup, Integer> {
 	
 	@Override
 	@Query("from EventGroup eg join fetch eg.eventSet")

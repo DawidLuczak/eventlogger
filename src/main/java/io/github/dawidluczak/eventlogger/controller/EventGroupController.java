@@ -39,10 +39,10 @@ public class EventGroupController {
 	
 	@Transactional
 	@RequestMapping(method = RequestMethod.PATCH, value = "/event_groups/{id}")
-	ResponseEntity<EventGroup> updateEventGroup(@PathVariable int id, @RequestBody @Valid EventGroup toUpdate){
+	ResponseEntity<?> updateEventGroup(@PathVariable int id, @RequestBody @Valid EventGroup toUpdate){
 		if (!eventGroupRepository.existsById(id))
 			return ResponseEntity.badRequest().build();
 		eventGroupRepository.findById(id).ifPresent(eventGroup -> eventGroup.updateFrom(toUpdate));
-		return ResponseEntity.ok(eventGroupRepository.findById(id).get());
+		return ResponseEntity.ok(eventGroupRepository.findById(id));
 	}
 }
